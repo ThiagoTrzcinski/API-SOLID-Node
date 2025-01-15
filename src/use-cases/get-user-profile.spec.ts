@@ -33,7 +33,7 @@ describe('Get User Profile Use case', () => {
       password_hash: await hash('123456', 6),
     })
 
-    expect(() =>
+    await expect(() =>
       sut.execute({
         userId: 'Non-existing-ID',
       }),
