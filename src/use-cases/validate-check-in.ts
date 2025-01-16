@@ -25,12 +25,12 @@ export class ValidateCheckInUseCase {
       throw new ResourceNotFound()
     }
 
-    const diferenceInMinutesFromCheckInCreation = dayjs(new Date()).diff(
+    const differenceInMinutesFromCheckInCreation = dayjs(new Date()).diff(
       checkIn.created_at,
       'minutes',
     )
 
-    if (diferenceInMinutesFromCheckInCreation > 20) {
+    if (differenceInMinutesFromCheckInCreation > 20) {
       throw new ExpiredCheckInError()
     }
 
